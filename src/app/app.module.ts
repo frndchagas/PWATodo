@@ -13,6 +13,8 @@ import {
 } from '@angular/material';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { TodoComponent } from './todo/todo.component';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
